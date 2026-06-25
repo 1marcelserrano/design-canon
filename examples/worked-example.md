@@ -1,4 +1,4 @@
-# Worked example — design-canon
+# Worked example · design-canon
 
 Três rodadas reais do gerador, copiadas verbatim da saída. Determinístico: rode os mesmos comandos e recebe o mesmo resultado.
 
@@ -154,4 +154,4 @@ python3 scripts/design_canon.py --config assets/examples/client_acme_ds.json --p
 
 ---
 
-Em todas: as cores que você declarou continuam com os nomes que você deu, os hexes que você passou. O fallback de render (`Liberation Sans` antes de Arial) é anexado às fontes — a única adição, e ela existe pra sua tipografia não quebrar em headless.
+Em todas: as cores que você declarou continuam com os nomes que você deu, os hexes que você passou. O fallback de render (`Liberation Sans` antes de Arial) é anexado às fontes. É a única adição, e existe pra sua tipografia não quebrar em headless.

@@ -4,14 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>design-canon — uma disciplina de design para qualquer design system</title>
+<title>design-canon · uma disciplina de design para qualquer design system</title>
 <meta name="description" content="Aplica uma disciplina (Vignelli, suíça ou nenhuma) aos tokens de qualquer design system e exporta em CSS, SCSS, Tailwind v4, JSON, W3C Design Tokens e Style Dictionary. Skill do Claude, determinística, sem dependência.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="design-canon — uma disciplina de design para qualquer design system">
+<meta property="og:title" content="design-canon · uma disciplina de design para qualquer design system">
 <meta property="og:description" content="Aplica uma disciplina (Vignelli, suíça ou nenhuma) aos tokens de qualquer design system e exporta em CSS, SCSS, Tailwind v4, JSON, W3C Design Tokens e Style Dictionary. Skill do Claude, determinística, sem dependência.">
 <meta property="og:image" content="https://raw.githubusercontent.com/1marcelserrano/design-canon/main/assets/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="design-canon — uma disciplina de design para qualquer design system">
+<meta name="twitter:title" content="design-canon · uma disciplina de design para qualquer design system">
 <meta name="twitter:description" content="Aplica uma disciplina (Vignelli, suíça ou nenhuma) aos tokens de qualquer design system e exporta em CSS, SCSS, Tailwind v4, JSON, W3C Design Tokens e Style Dictionary. Skill do Claude, determinística, sem dependência.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/1marcelserrano/design-canon/main/assets/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -166,13 +166,13 @@
   <main>
     <p class="kicker">design-canon · uma skill do Claude</p>
     <h1 id="abre">Tokens com <span class="hl">disciplina</span>.</h1>
-    <p class="hookline">Você tem uma paleta e umas fontes.<br class="brk">Eu devolvo tokens fiéis — em seis formatos, sem inventar nada.</p>
+    <p class="hookline">Você tem uma paleta e umas fontes.<br class="brk">Eu devolvo tokens fiéis. Seis formatos, sem inventar nada.</p>
     <div class="tldr">
       <span class="lbl">TL;DR</span>
       <ul>
-        <li>Pedir tokens a um modelo dá saída <strong>infiel</strong>: cor renomeada, rampa de cinza inventada, formato errado — e diferente a cada vez.</li>
+        <li>Pedir tokens a um modelo dá saída <strong>infiel</strong>: cor renomeada, rampa de cinza inventada, formato errado, e diferente a cada vez.</li>
         <li>A <strong>design-canon</strong> separa disciplina (o método) de marca (os valores) e roda um gerador determinístico: mesma entrada, mesma saída.</li>
-        <li>Três disciplinas — <strong>Vignelli, suíça, blank</strong> — seis formatos de token, zero rede e zero credencial.</li>
+        <li>Três disciplinas (<strong>Vignelli, suíça, blank</strong>): seis formatos de token, zero rede e zero credencial.</li>
       </ul>
     </div>
     <p class="lead">Design tokens são a ponte entre a marca e o código. A design-canon atravessa essa ponte sem chutar: os valores são os que você declara; o método é o preset que você escolhe.</p>
@@ -183,10 +183,10 @@
       <div class="sec-head"><span class="num">Camada 1 · O problema</span><h2></h2><span class="chev">▾</span></div>
       <div class="sec-body"><div style="padding-bottom:10px">
         <h2 style="margin:0 0 18px">Quem gera token costuma designar demais</h2>
-        <p>Pede pra um modelo "gerar os design tokens da minha marca" e ele entrega algo bonito e infiel. Renomeia suas cores — <code>primary</code> vira <code>lime</code> —, inventa uma rampa de cinza que não existe no seu DS, cria tints e shades que você nunca aprovou.</p>
-        <p>A causa é simples: gerar tokens mistura duas decisões que deviam ser separadas — qual o método (quantos tamanhos de tipo, que grids, como a cor se comporta) e quais os valores (seus hexes, suas fontes). Quando viram uma coisa só, o modelo preenche os buracos chutando.</p>
+        <p>Pede pra um modelo "gerar os design tokens da minha marca" e ele entrega algo bonito e infiel. Renomeia suas cores (<code>primary</code> vira <code>lime</code>), inventa uma rampa de cinza que não existe no seu DS, cria tints e shades que você nunca aprovou.</p>
+        <p>A causa é simples: gerar tokens mistura duas decisões que deviam ser separadas. Qual o método (quantos tamanhos de tipo, que grids, como a cor se comporta) e quais os valores (seus hexes, suas fontes). Quando viram uma coisa só, o modelo preenche os buracos chutando.</p>
         <p class="label">O atrito</p>
-        <p>E o chute é justo a parte que você não controla. Para um handoff de dev, isso é ruído: você queria os seus valores, normalizados, num formato fixo — não uma reinterpretação nova a cada rodada.</p>
+        <p>E o chute é justo a parte que você não controla. Para um handoff de dev, isso é ruído: você queria os seus valores, normalizados, num formato fixo. Não uma reinterpretação nova a cada rodada.</p>
       </div></div>
     </section>
 
@@ -195,7 +195,7 @@
       <div class="sec-body"><div style="padding-bottom:10px">
         <h2 style="margin:0 0 18px">Disciplina ⊥ marca</h2>
         <p>O modelo central é uma ortogonalidade. A <strong>disciplina</strong> é o método: razão da escala de tipo, set de grids, pesos de régua, semântica de cor, fallback de fonte. É a régua. A <strong>marca</strong> são os valores: paleta, fontes, tamanho-base. É o conteúdo.</p>
-        <p>Você renderiza os valores da sua marca através de uma disciplina escolhida. A disciplina nunca troca seus valores — ela impõe a estrutura e avisa, fora do arquivo, quando a marca viola o método. Vignelli, por exemplo, virou um preset: o rigor do Canon aplicado a qualquer paleta, inclusive a sua.</p>
+        <p>Você renderiza os valores da sua marca através de uma disciplina escolhida. A disciplina nunca troca seus valores: ela impõe a estrutura e avisa, fora do arquivo, quando a marca viola o método. Vignelli, por exemplo, virou um preset: o rigor do Canon aplicado a qualquer paleta, inclusive a sua.</p>
 
         
         <div class="figure" data-anim="bars">
@@ -216,10 +216,10 @@
         <h2 style="margin:0 0 18px">Da marca ao token, em um comando</h2>
         <p>O gerador é um script Python sem dependência. Cinco passos, determinísticos:</p>
         <div class="stages">
-          <div class="stagecard"><span class="sn">01</span><div><p class="st">Descreve a marca</p><p class="sd">Paleta, fontes e tamanho-base num JSON — ou direto por flags (--primary, --base, --face).</p></div></div>
+          <div class="stagecard"><span class="sn">01</span><div><p class="st">Descreve a marca</p><p class="sd">Paleta, fontes e tamanho-base num JSON, ou direto por flags (--primary, --base, --face).</p></div></div>
           <div class="stagecard"><span class="sn">02</span><div><p class="st">Escolhe a disciplina</p><p class="sd">vignelli (o Canon), swiss (estilo internacional) ou blank (passthrough sem opiniões).</p></div></div>
           <div class="stagecard"><span class="sn">03</span><div><p class="st">O gerador funde</p><p class="sd">Estrutura do preset + valores da marca. Precedência clara: flag > config > default do preset.</p></div></div>
-          <div class="stagecard"><span class="sn">04</span><div><p class="st">Avisa, fora do arquivo</p><p class="sd">Se a marca dilui a cor-identificador ou estoura o limite de tamanhos, o aviso sai em stderr — nunca no token.</p></div></div>
+          <div class="stagecard"><span class="sn">04</span><div><p class="st">Avisa, fora do arquivo</p><p class="sd">Se a marca dilui a cor-identificador ou estoura o limite de tamanhos, o aviso sai em stderr, nunca no token.</p></div></div>
           <div class="stagecard"><span class="sn">05</span><div><p class="st">Exporta o formato</p><p class="sd">CSS, SCSS, Tailwind v4 @theme, JSON, W3C Design Tokens ou Style Dictionary. O mesmo DS, o formato que seu time usa.</p></div></div>
         </div>
       </div></div>
@@ -231,9 +231,9 @@
         <h2 style="margin:0 0 18px">Um exemplo real</h2>
         
         <p>Você descreve a marca num JSON e pede o formato. A mesma marca pode sair pela disciplina <strong>blank</strong> (sem opiniões) ou <strong>vignelli</strong> (dois tamanhos, régua, grid). Aqui, o DS da casa em Tailwind v4:</p>
-        <p class="code-cap">Entrada — ds.json</p>
+        <p class="code-cap">Entrada · ds.json</p>
         <div class="code"><span class="c">{</span> <span class="k">"palette"</span>: { <span class="k">"primary"</span>: "#B4C636", <span class="k">"bg"</span>: "#0A0A0E" }, <span class="k">"fonts"</span>: { <span class="k">"sans"</span>: "Inter Tight" }, <span class="k">"base_px"</span>: 16 <span class="c">}</span></div>
-        <p class="code-cap">Saída — design_canon.py --config ds.json --format tailwind</p>
+        <p class="code-cap">Saída · design_canon.py --config ds.json --format tailwind</p>
         <div class="code">@theme {<br>
 &nbsp;&nbsp;<span class="k">--color-primary</span>: #B4C636;<br>
 &nbsp;&nbsp;<span class="k">--color-bg</span>: #0A0A0E;<br>
@@ -241,7 +241,7 @@
 &nbsp;&nbsp;<span class="k">--text-base</span>: 16.0px;<br>
 &nbsp;&nbsp;<span class="c">/* … */</span><br>
 }</div>
-        <p><code>primary</code> continua <code>primary</code>. Nenhuma cor renomeada, nenhuma rampa inventada. O fallback <code>'Liberation Sans'</code> entra sozinho — pra fonte não quebrar em render headless.</p>
+        <p><code>primary</code> continua <code>primary</code>. Nenhuma cor renomeada, nenhuma rampa inventada. O fallback <code>'Liberation Sans'</code> entra sozinho, pra fonte não quebrar em render headless.</p>
       </div></div>
     </section>
 
@@ -249,7 +249,7 @@
       <div class="sec-head"><span class="num">Pra fechar</span><h2></h2><span class="chev">▾</span></div>
       <div class="sec-body"><div style="padding-bottom:10px">
         <div class="closing">
-          <p class="big">Vignelli virou um preset — o método vale pra qualquer marca.</p>
+          <p class="big">Vignelli virou um preset. O método vale pra qualquer marca.</p>
           <p style="margin:0">Pega a disciplina que você respeita e aplica na marca que você tem. O token sai fiel, no formato que seu time usa. Sem rede, sem credencial, sem chute.</p>
         </div>
         <div class="cta-row">
@@ -322,7 +322,7 @@
     function showToast(){if(toast){toast.classList.add('show');setTimeout(function(){toast.classList.remove('show');},1800);}}
     function legacyCopy(){try{var ta=document.createElement('textarea');ta.value=location.href;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast();}catch(e){}}
     shareBtn.addEventListener('click',function(){
-      var data={title:document.title,text:'design-canon — uma disciplina de design para qualquer design system',url:location.href};
+      var data={title:document.title,text:'design-canon · uma disciplina de design para qualquer design system',url:location.href};
       if(navigator.share){navigator.share(data).catch(function(){});return;}
       if(navigator.clipboard&&navigator.clipboard.writeText){
         navigator.clipboard.writeText(location.href).then(showToast).catch(legacyCopy);
