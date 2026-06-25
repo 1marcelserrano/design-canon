@@ -1,0 +1,17 @@
+{
+  "name": "MSCS DS V3.0",
+  "base_px": 16,
+  "prefix": "ms",
+  "palette": {
+    "primary": "#B4C636",
+    "bg": "#0A0A0E",
+    "bg-2": "#111114",
+    "fg": "#B2A898",
+    "ceremonial": "#E8C547"
+  },
+  "fonts": {
+    "serif": "Fraunces",
+    "sans": "Inter Tight",
+    "mono": "IBM Plex Mono"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ACME Fintech DS",
+  "base_px": 17,
+  "prefix": "acme",
+  "palette": {
+    "primary": "#0B5FFF",
+    "ink": "#0C1116",
+    "paper": "#FFFFFF",
+    "success": "#0FA958"
+  },
+  "fonts": {
+    "sans": "Söhne",
+    "mono": "Söhne Mono"
+  }
+}

@@ -1,0 +1,46 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg-start:#0A0A0E;--bg-end:#111114;--accent:#B4C636;--cream:#ECEAE0;--mono:#9A9A93;--grid:rgba(255,255,255,0.035);--pad:72px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg-end);font-family:'IBM Plex Mono',monospace}
+  .card{position:relative;width:1280px;height:640px;overflow:hidden;
+    background:radial-gradient(120% 90% at 82% 42%,rgba(180,198,54,0.10),transparent 60%),linear-gradient(135deg,var(--bg-start),var(--bg-end));
+    border:1px solid rgba(255,255,255,0.06)}
+  .card::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:repeating-linear-gradient(0deg,var(--grid) 0 1px,transparent 1px 54px),repeating-linear-gradient(90deg,var(--grid) 0 1px,transparent 1px 54px)}
+  .card-inner{position:absolute;inset:0;padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between;z-index:2}
+  .kicker{font-size:18px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--mono)}
+  .mid{display:flex;align-items:center;justify-content:space-between;gap:40px;flex:1;margin:22px 0}
+  .copy{max-width:58%}
+  .headline{font-family:'Fraunces',serif;font-weight:600;font-variation-settings:'opsz' 36,'wght' 600;line-height:.82;letter-spacing:-.01em;font-size:120px}
+  .headline .l1{display:block;color:var(--cream)}
+  .headline .l2{display:block;color:var(--accent);font-style:normal;font-weight:600}
+  .tagline{margin-top:34px;font-size:26px;line-height:1.4;color:var(--mono);max-width:32ch}
+  .motif{flex:0 0 auto;width:300px;height:300px;display:flex;align-items:center;justify-content:center}
+  .motif svg{width:100%;height:100%}
+  .motif .ln{stroke:var(--accent);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .motif .gy{stroke:var(--mono);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
+  .motif .gyf{fill:var(--mono);opacity:.3}
+  .motif .acf{fill:var(--accent)}
+  .foot{display:flex;align-items:flex-end;justify-content:flex-end}
+</style></head><body>
+<div class="card" data-variant="open"><div class="card-inner">
+  <div class="kicker">MSCREATIVE.SYSTEMS™ — A CLAUDE SKILL</div>
+  <div class="mid">
+    <div class="copy">
+      <div class="headline"><span class="l1">Design</span><span class="l2">Canon.</span></div>
+      <div class="tagline">Uma disciplina.<br>Qualquer marca.<br>Tokens em seis formatos.</div>
+    </div>
+    <div class="motif"><svg viewBox="0 0 300 300">
+  <line class="ln" x1="44" y1="74" x2="256" y2="74" stroke-width="9"/>
+  <rect class="acf" x="52" y="84" width="118" height="30" rx="3"/>
+  <rect class="gyf" x="52" y="126" width="74" height="15" rx="3"/>
+  <rect class="gy" x="52" y="168" width="62" height="62" rx="6"/>
+  <rect class="gy" x="123" y="168" width="62" height="62" rx="6"/>
+  <rect class="acf" x="194" y="168" width="62" height="62" rx="6"/>
+</svg></div>
+  </div>
+  <div class="foot"><svg viewBox="0 0 67.19667 51.75458" style="height:84px;width:auto;color:var(--accent)" role="img" aria-label="MSCREATIVE.SYSTEMS"><path fill="currentColor" d="M8.15479,17.66986c-.10727,4.76875.03115,9.5285.41527,14.27922.25365,3.1651,1.03955,6.29608,1.74645,9.47888C12.17932,49.84272-.28837,51.03399.0051,42.2846c.35921-10.7694,2.02753-21.07894,5.00492-30.92856.43105-1.41773,1.65413-3.47677,3.2464-2.21435.53746.42306.92911.9969,1.17496,1.72154l5.78538,16.91602c.23584.68769.41046.67353.52387-.04254,1.02383-6.35386,2.74577-12.56867,5.16579-18.64433,2.42341-6.08573,7.57839-4.14271,9.40284.91599,2.77922,7.71993,3.71882,15.26481,4.54493,24.0988.01976.18583.11541.20673.28695.06271,5.16382-4.20649,10.48613-8.20113,15.96693-11.98388.2477-.17071.22158-.25977-.07835-.26709-3.61598-.09368-7.23981-.18066-10.87148-.26095-7.39821-.16475-4.36055-6.1619-1.09576-9.14847,3.1263-2.86316,6.25148-5.72857,9.37556-8.59623,1.40786-1.29146,2.61261-3.41267,5.0914-3.82386,5.89972-.9766,7.89921,6.29685,3.23346,9.68677-3.83797,2.79228-7.80539,5.39743-11.90226,7.81541-.15464.09367-.14189.15021.03827.16962,3.88277.43335,7.73249.3423,11.54916-.27318,2.22015-.35804,3.71273-2.03541,5.76647-2.29809,3.64903-.46082,6.04224,3.15361,4.51287,6.37544-.40245.85424-1.13742,1.76487-2.20492,2.73191-9.11467,8.26941-20.20634,14.6041-28.33323,22.56665-1.08504,1.06379-2.30373,3.42673-3.57933,4.09058-4.6234,2.39615-8.52986-.9142-8.76183-5.62878-.18359-3.7576-1.48526-26.94142-1.86815-26.88513-.09989.01549-.20829.14727-.27434.33352-1.46726,4.3048-2.51335,8.71175-3.13827,13.2209-.12499.90632-.43616,1.72773-.9335,2.46426-1.56103,2.29841-3.54903-.8048-4.06681-2.08179-2.07112-5.11908-3.79413-9.98508-5.16903-14.59797-.02544-.08589-.07445-.14821-.12558-.15976l-.05874-.0085c-.02576-.00602-.05156.01476-.05761.04636-.00077.00405-.00119.00814-.00126.01226l-.00003-.00003Z"/></svg></div>
+</div></div></body></html>
