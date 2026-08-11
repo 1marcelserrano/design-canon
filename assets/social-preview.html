@@ -1,30 +1,82 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<!doctype html>
+<!-- Social preview 1280x640 - instancia do gabarito MSCS DS V5.4, modo Tradutor.
+     Render: Chrome headless, --window-size=1280,640 --force-device-scale-factor=2 -> 2560x1280.
+     Preset: design-canon - motivo doclist (uma disciplina, qualquer marca).
+     Papel #F2EFE7, contorno 3px, sombra tingida, Fraunces opsz 9, raio 0.
+     Termo em display grande = #FF3B00. O azul de acao nao entra: card nao tem acao. --><html lang="pt-BR"><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@300..700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg-start:#0A0A0E;--bg-end:#111114;--accent:#B4C636;--cream:#ECEAE0;--mono:#9A9A93;--grid:rgba(255,255,255,0.035);--pad:72px}
+  /* ================= MSCS DS V5.4 — MODO TRADUTOR ================= */
+  :root{
+    --ms-bg:#F2EFE7;        /* papel — o campo */
+    --ms-surface:#FAF8F3;   /* papel elevado — a superfície do card */
+    --ms-contorno:#1A1410;  /* preto quente. 3px, fecha a forma */
+    --ms-ink:#1A1410;
+    --ms-muted:#4A463D;     /* corpo */
+    --ms-label:#6E6E26;     /* oliva — kicker mono */
+    --ms-terra:#C48F41;     /* ocre — rabisco, não carrega texto */
+    --ms-vivo-1:#FF3B00;    /* laranja M4 — display grande e sinal não-textual */
+    --ms-vivo-2:#155BB0;    /* azul — AÇÃO. Não aparece no card: card não tem ação */
+    --ms-vivo-3:#CC2E00;    /* laranja escuro — termo em texto simples */
+    --ms-vivo-ink:#F2EFE7;
+    --ms-termo:var(--ms-vivo-3);
+    --ms-termo-vivo:var(--ms-vivo-1);
+    --ms-shadow:0 10px 28px rgba(26,20,16,.20), 0 2px 6px rgba(26,20,16,.12);
+    --ms-radius:0px;
+    --card-w:1280px; --card-h:640px;
+    --inset:22px;           /* campo de papel em volta do card */
+    --pad:58px;             /* respiro interno do card */
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg-end);font-family:'IBM Plex Mono',monospace}
-  .card{position:relative;width:1280px;height:640px;overflow:hidden;
-    background:radial-gradient(120% 90% at 82% 42%,rgba(180,198,54,0.10),transparent 60%),linear-gradient(135deg,var(--bg-start),var(--bg-end));
-    border:1px solid rgba(255,255,255,0.06)}
-  .card::before{content:"";position:absolute;inset:0;pointer-events:none;
-    background-image:repeating-linear-gradient(0deg,var(--grid) 0 1px,transparent 1px 54px),repeating-linear-gradient(90deg,var(--grid) 0 1px,transparent 1px 54px)}
-  .card-inner{position:absolute;inset:0;padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between;z-index:2}
-  .kicker{font-size:18px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--mono)}
+  html,body{width:var(--card-w);height:var(--card-h);overflow:hidden}
+  body{background:var(--ms-bg)}
+
+  /* .card = o campo inteiro (papel). O card real é o ::before, inset, com contorno e sombra. */
+  .card{
+    position:relative;width:var(--card-w);height:var(--card-h);overflow:hidden;
+    background:var(--ms-bg);color:var(--ms-ink);
+    font-family:'Inter Tight',system-ui,sans-serif;
+  }
+  .card::before{content:"";position:absolute;inset:var(--inset);z-index:0;
+    background:var(--ms-surface);
+    border:3px solid var(--ms-contorno);
+    border-radius:var(--ms-radius);
+    box-shadow:var(--ms-shadow);}
+
+  /* rabisco (z 1) e grão (z 3) são injetados por script — ver §5 do DS */
+  .rabisco{position:absolute;inset:var(--inset);z-index:1;pointer-events:none}
+  .grao{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;
+    mix-blend-mode:multiply;opacity:.38}
+
+  .card-inner{position:absolute;inset:var(--inset);padding:var(--pad);
+    display:flex;flex-direction:column;justify-content:space-between;z-index:2}
+
+  .kicker{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;font-weight:500;
+    letter-spacing:.26em;text-transform:uppercase;color:var(--ms-label)}
+
   .mid{display:flex;align-items:center;justify-content:space-between;gap:40px;flex:1;margin:22px 0}
-  .copy{max-width:58%}
-  .headline{font-family:'Fraunces',serif;font-weight:600;font-variation-settings:'opsz' 36,'wght' 600;line-height:.82;letter-spacing:-.01em;font-size:120px}
-  .headline .l1{display:block;color:var(--cream)}
-  .headline .l2{display:block;color:var(--accent);font-style:normal;font-weight:600}
-  .tagline{margin-top:34px;font-size:26px;line-height:1.4;color:var(--mono);max-width:32ch}
+  .copy{max-width:60%}
+  .headline{font-family:'Fraunces',Georgia,serif;font-weight:600;
+    font-variation-settings:'opsz' 9,'wght' 600;
+    line-height:.86;letter-spacing:-.025em;font-size:112px}
+  .headline .l1{display:block;color:var(--ms-ink)}
+  .headline .l2{display:block;color:var(--ms-termo-vivo);font-style:normal;font-weight:600}
+  .tagline{margin-top:28px;font-family:'Inter Tight',system-ui,sans-serif;
+    font-size:24px;line-height:1.45;color:var(--ms-muted);max-width:32ch}
+
   .motif{flex:0 0 auto;width:300px;height:300px;display:flex;align-items:center;justify-content:center}
   .motif svg{width:100%;height:100%}
-  .motif .ln{stroke:var(--accent);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .motif .gy{stroke:var(--mono);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
-  .motif .gyf{fill:var(--mono);opacity:.3}
-  .motif .acf{fill:var(--accent)}
-  .foot{display:flex;align-items:flex-end;justify-content:flex-end}
+  .motif .ln{stroke:var(--ms-termo-vivo);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .motif .gy{stroke:var(--ms-contorno);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.62}
+  .motif .gyf{fill:var(--ms-contorno);opacity:.24}
+  .motif .acf{fill:var(--ms-termo-vivo)}
+
+  .foot{display:flex;align-items:flex-end;justify-content:space-between}
+  .monogram{margin-left:auto;color:var(--ms-ink);display:block}
+  .monogram svg{height:70px;width:auto;display:block}
+  /* alguns cards trazem o monograma como <svg> solto dentro do .foot */
+  .foot > svg{margin-left:auto;height:70px;width:auto;display:block;color:var(--ms-ink)}
 </style></head><body>
 <div class="card" data-variant="open"><div class="card-inner">
   <div class="kicker">MSCREATIVE.SYSTEMS™ — A CLAUDE SKILL</div>
@@ -42,5 +94,96 @@
   <rect class="acf" x="194" y="168" width="62" height="62" rx="6"/>
 </svg></div>
   </div>
-  <div class="foot"><svg viewBox="0 0 67.19667 51.75458" style="height:84px;width:auto;color:var(--accent)" role="img" aria-label="MSCREATIVE.SYSTEMS"><path fill="currentColor" d="M8.15479,17.66986c-.10727,4.76875.03115,9.5285.41527,14.27922.25365,3.1651,1.03955,6.29608,1.74645,9.47888C12.17932,49.84272-.28837,51.03399.0051,42.2846c.35921-10.7694,2.02753-21.07894,5.00492-30.92856.43105-1.41773,1.65413-3.47677,3.2464-2.21435.53746.42306.92911.9969,1.17496,1.72154l5.78538,16.91602c.23584.68769.41046.67353.52387-.04254,1.02383-6.35386,2.74577-12.56867,5.16579-18.64433,2.42341-6.08573,7.57839-4.14271,9.40284.91599,2.77922,7.71993,3.71882,15.26481,4.54493,24.0988.01976.18583.11541.20673.28695.06271,5.16382-4.20649,10.48613-8.20113,15.96693-11.98388.2477-.17071.22158-.25977-.07835-.26709-3.61598-.09368-7.23981-.18066-10.87148-.26095-7.39821-.16475-4.36055-6.1619-1.09576-9.14847,3.1263-2.86316,6.25148-5.72857,9.37556-8.59623,1.40786-1.29146,2.61261-3.41267,5.0914-3.82386,5.89972-.9766,7.89921,6.29685,3.23346,9.68677-3.83797,2.79228-7.80539,5.39743-11.90226,7.81541-.15464.09367-.14189.15021.03827.16962,3.88277.43335,7.73249.3423,11.54916-.27318,2.22015-.35804,3.71273-2.03541,5.76647-2.29809,3.64903-.46082,6.04224,3.15361,4.51287,6.37544-.40245.85424-1.13742,1.76487-2.20492,2.73191-9.11467,8.26941-20.20634,14.6041-28.33323,22.56665-1.08504,1.06379-2.30373,3.42673-3.57933,4.09058-4.6234,2.39615-8.52986-.9142-8.76183-5.62878-.18359-3.7576-1.48526-26.94142-1.86815-26.88513-.09989.01549-.20829.14727-.27434.33352-1.46726,4.3048-2.51335,8.71175-3.13827,13.2209-.12499.90632-.43616,1.72773-.9335,2.46426-1.56103,2.29841-3.54903-.8048-4.06681-2.08179-2.07112-5.11908-3.79413-9.98508-5.16903-14.59797-.02544-.08589-.07445-.14821-.12558-.15976l-.05874-.0085c-.02576-.00602-.05156.01476-.05761.04636-.00077.00405-.00119.00814-.00126.01226l-.00003-.00003Z"/></svg></div>
-</div></div></body></html>
+  <div class="foot"><svg viewBox="0 0 67.19667 51.75458"  role="img" aria-label="MSCREATIVE.SYSTEMS"><path fill="currentColor" d="M8.15479,17.66986c-.10727,4.76875.03115,9.5285.41527,14.27922.25365,3.1651,1.03955,6.29608,1.74645,9.47888C12.17932,49.84272-.28837,51.03399.0051,42.2846c.35921-10.7694,2.02753-21.07894,5.00492-30.92856.43105-1.41773,1.65413-3.47677,3.2464-2.21435.53746.42306.92911.9969,1.17496,1.72154l5.78538,16.91602c.23584.68769.41046.67353.52387-.04254,1.02383-6.35386,2.74577-12.56867,5.16579-18.64433,2.42341-6.08573,7.57839-4.14271,9.40284.91599,2.77922,7.71993,3.71882,15.26481,4.54493,24.0988.01976.18583.11541.20673.28695.06271,5.16382-4.20649,10.48613-8.20113,15.96693-11.98388.2477-.17071.22158-.25977-.07835-.26709-3.61598-.09368-7.23981-.18066-10.87148-.26095-7.39821-.16475-4.36055-6.1619-1.09576-9.14847,3.1263-2.86316,6.25148-5.72857,9.37556-8.59623,1.40786-1.29146,2.61261-3.41267,5.0914-3.82386,5.89972-.9766,7.89921,6.29685,3.23346,9.68677-3.83797,2.79228-7.80539,5.39743-11.90226,7.81541-.15464.09367-.14189.15021.03827.16962,3.88277.43335,7.73249.3423,11.54916-.27318,2.22015-.35804,3.71273-2.03541,5.76647-2.29809,3.64903-.46082,6.04224,3.15361,4.51287,6.37544-.40245.85424-1.13742,1.76487-2.20492,2.73191-9.11467,8.26941-20.20634,14.6041-28.33323,22.56665-1.08504,1.06379-2.30373,3.42673-3.57933,4.09058-4.6234,2.39615-8.52986-.9142-8.76183-5.62878-.18359-3.7576-1.48526-26.94142-1.86815-26.88513-.09989.01549-.20829.14727-.27434.33352-1.46726,4.3048-2.51335,8.71175-3.13827,13.2209-.12499.90632-.43616,1.72773-.9335,2.46426-1.56103,2.29841-3.54903-.8048-4.06681-2.08179-2.07112-5.11908-3.79413-9.98508-5.16903-14.59797-.02544-.08589-.07445-.14821-.12558-.15976l-.05874-.0085c-.02576-.00602-.05156.01476-.05761.04636-.00077.00405-.00119.00814-.00126.01226l-.00003-.00003Z"/></svg></div>
+</div></div><script>
+/* MSCS DS V5.4 §5 — superfície: rabisco (determinístico) + grão de papel.
+   Semente fixa: o mesmo campo em todo render. A zona de texto é REJEITADA no
+   gerador — o rabisco nunca nasce sob o texto, nem é coberto por tarja depois. */
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  var seed=20260805;
+  function rnd(){ seed=(seed*1664525+1013904223)%4294967296; return seed/4294967296; }
+
+  /* ZONAS. O traço INTEIRO precisa caber na zona — não basta nascer dentro dela
+     e vazar depois. Escolha por data-zona no .card:
+       "base" (default) — faixa inferior-esquerda. Vale pro layout do gabarito,
+                          onde o rodapé só tem o monograma, à direita.
+       "lado"           — coluna direita. Vale quando o rodapé carrega texto de
+                          ponta a ponta e a faixa de baixo deixa de estar livre. */
+  var ZONAS={
+    base:{
+      dentro:function(x,y){ return x>0.02 && x<0.78 && y>0.74 && y<0.985; },
+      densidade:function(x,y){
+        var f=1;
+        if(y<0.82) f*=(y-0.74)/0.08;   /* topo da zona */
+        if(x>0.66) f*=(0.78-x)/0.12;   /* perto do monograma */
+        return f;
+      }
+    },
+    lado:{
+      dentro:function(x,y){ return x>0.56 && x<0.97 && y>0.06 && y<0.68; },
+      densidade:function(x,y){
+        var f=1;
+        if(x<0.66) f*=(x-0.56)/0.10;
+        if(y>0.58) f*=(0.68-y)/0.10;
+        return f;
+      }
+    }
+  };
+
+  function rabisco(host,W,H,n,z){
+    var zona=z.dentro, densidade=z.densidade;
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('class','rabisco');
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    svg.setAttribute('preserveAspectRatio','none');
+    svg.setAttribute('aria-hidden','true');
+    var salto=W*0.10;               /* 3 segmentos → até 30% da largura da zona */
+    for(var t=0,k=0; k<n && t<n*60; t++){
+      var x=rnd(), y=rnd();
+      if(!zona(x,y)) continue;
+      if(rnd()>densidade(x,y)) continue;
+      var pts=[[x,y]], cx=x, cy=y, ok=true;
+      for(var s=0;s<3;s++){
+        cx+=(rnd()-0.5)*2*0.10;
+        cy+=(rnd()-0.5)*2*0.10*(W/H)*0.42;
+        if(!zona(cx,cy)){ ok=false; }
+        pts.push([cx,cy]);
+      }
+      if(!ok) continue;             /* traço que sairia da zona é descartado inteiro */
+      k++;
+      var d='M'+(pts[0][0]*W).toFixed(1)+' '+(pts[0][1]*H).toFixed(1);
+      for(var j=1;j<pts.length;j++){ d+=' L'+(pts[j][0]*W).toFixed(1)+' '+(pts[j][1]*H).toFixed(1); }
+      var p=document.createElementNS(NS,'path');
+      p.setAttribute('d',d);
+      p.setAttribute('fill','none');
+      p.setAttribute('stroke','#C48F41');
+      p.setAttribute('stroke-linecap','round');
+      p.setAttribute('stroke-width',(0.50+rnd()*0.45).toFixed(2));
+      p.setAttribute('opacity',(0.10+rnd()*0.32).toFixed(3));
+      svg.appendChild(p);
+    }
+    host.insertBefore(svg,host.firstChild);
+  }
+
+  function grao(host){
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('class','grao');
+    svg.setAttribute('width','100%');
+    svg.setAttribute('height','100%');
+    svg.setAttribute('aria-hidden','true');
+    svg.innerHTML='<filter id="ms-grao"><feTurbulence type="fractalNoise" baseFrequency="0.85"'
+      +' numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>'
+      +'<rect width="100%" height="100%" filter="url(#ms-grao)"/>';
+    host.appendChild(svg);
+  }
+
+  var card=document.querySelector('.card');
+  if(!card) return;
+  var cs=getComputedStyle(card), ins=parseFloat(cs.getPropertyValue('--inset'))||22;
+  rabisco(card, card.clientWidth-ins*2, card.clientHeight-ins*2, 210,
+          ZONAS[card.getAttribute('data-zona')] || ZONAS.base);
+  grao(card);   /* o grão cobre a peça inteira: papel do campo e papel do card */
+})();
+</script>
+</body></html>
